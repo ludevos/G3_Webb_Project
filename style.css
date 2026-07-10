@@ -205,7 +205,6 @@ body {
 }
 
 
-
 /* For smaller screens adjust the layout of the banner and text */
 @media (max-width: 640px) {
     .banner {min-height: 320px; align-items: flex-end;}
