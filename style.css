@@ -8,12 +8,6 @@ body {
     overflow: hidden; /* Prevents vertical scrolling and lets the filmstrip handle horizontal scrolling */ 
 }
 
-.characters {
-    display: grid;
-    grid-template-columns: 1fr 1fr; /* Two equal columns */
-    gap: 20px; /* Creates space between the cards */
-}
-
 /* The filmstrip container that holds all the pages. Each page is a child of this container. */
 .filmstrip {
     display: flex;              /* Arrange the child pages in a row */ 
@@ -33,13 +27,13 @@ body {
 /* The banner of the cards */
 .banner {
     position: relative;
-    display: flex;
+    display: flex;          /* Flexbox layout to position the text and image responsively */
     align-items: center;
     min-height: 300px;
     border-radius: 22px;
-    overflow: hidden;
-    margin: 0 auto 28px;
-    max-width: 980px;
+    overflow: hidden;       /* Ensures that the image and shade don't spill outside the rounded corners */
+    margin: 0 auto 28px;    /* auto centers the banner horizontally and add space below it */
+    max-width: 990px;       /* Won't go wider than this */
     background: #16120e;
 }
 
