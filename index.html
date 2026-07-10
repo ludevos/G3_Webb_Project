@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Borderlands 3</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+
+    <script src="script.js"></script>
+    <script src="jq_b.js"></script>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- The whole site is a horizontal filmstrip of pages. Each page = one screen wide. -->
+    <div class="filmstrip">
+
+        <!-- ================= FRAME: Home ================= -->
+        <section class="page" id="home">
+            <h1 class="title">Vault Hunters of Pandora</h1>
+
+            <div class="row g-4">
+                <div class="col-lg-6">
+                    <div class="banner zane">
+                        <img src='img/Zane.jpg' class="banner-img" alt='Zane Flynt'>
+                        <div class="shade"></div>
+                        <div class="bannerText">
+                            <p class="playerOrNPC">Vault Hunter</p>
+                            <h2>Zane Flynt</h2>
+                            <p>Semi-retired hitman, full-time chatterbox. The only Vault Hunter who runs TWO gadgets at once.</p>
+                            <button class="moreInfo" onclick="goTo('zane')">Zane →</button>
+                        </div>
+                    </div>
+
+                    <!-- This part is for Fl4k, -->
+                    <div class="banner fl4k">
+                        <img src='img/Fl4k.jpg' class="banner-img" alt='Fl4k' >
+                        <div class="shade"></div>
+                        <div class="bannerText">
+                            <p class="playerOrNPC">Vault Hunter</p>
+                            <h2>Fl4k</h2>
+                            <p>The Beastmaster. Fl4k is a skilled hunter with a deep bond to his pets, capable of unleashing devastating attacks with their help.</p>
+                            <button class="moreInfo" onclick="goTo('fl4k')">Fl4k →</button>
+                        </div>
+                    </div>
+
+                    <!-- This is for Ellie -->
+                    <div class="banner ellie">
+                        <img src='img/Ellie.jpg' class="banner-img" alt='Ellie'>
+                        <div class="shade"></div>
+                        <div class="bannerText">
+                            <p class="playerOrNPC">NPC - Mechanic</p>
+                            <h2>Ellie</h2>
+                            <p>Sanctuary III's chief mechanic. Big heart, bigger wrench, and don't you DARE touch her car collection.</p>
+                            <button class="moreInfo" onclick="goTo('ellie')">Ellie →</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-6">
+                    <div class="banner moze">
+                        <img src='img/Moze.jpg' class="banner-img" alt='Moze'>
+                        <div class="shade"></div>
+                        <div class="bannerText">
+                            <p class="playerOrNPC">Vault Hunter</p>
+                            <h2>Moze</h2>
+                            <p>Sanctuary III's heavy artillery specialist. Moze pilots the Iron Bear mech, bringing firepower and destruction to the battlefield.</p>
+                            <button class="moreInfo" onclick="goTo('moze')">Moze →</button>
+                        </div>
+                    </div>
+
+                    <div class="banner amara">
+                        <img src='img/Amara.jpg' class="banner-img" alt='Amara'>
+                        <div class="shade"></div>
+                        <div class="bannerText">
+                            <p class="playerOrNPC">Vault Hunter</p>
+                            <h2>Amara</h2>
+                            <p>Sanctuary III's siren. Amara wields mystical powers to devastate her enemies and protect her allies.</p>
+                            <button class="moreInfo" onclick="goTo('amara')">Amara →</button>
+                        </div>
+                    </div>
+
+                    <div class="banner cl4ptrap">
+                        <img src='img/Cl4pTrap.jpg' class="banner-img" alt='Cl4pTrap'>
+                        <div class="shade"></div>
+                        <div class="bannerText">
+                            <p class="playerOrNPC">Vault Hunter</p>
+                            <h2>Cl4pTrap</h2>
+                            <p>Sanctuary III's lovable robot. Cl4pTrap is known for his quirky personality, explosive arsenal, and relentless pursuit of fun and chaos.</p>
+                            <button class="moreInfo" onclick="goTo('cl4ptrap')">Cl4pTrap →</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </section>
+
+
+
+        <!-- This is for Zane -->
+         <section class="page" id="zane">
+            <div class="details">
+                <button class="goBackBtn" onclick="goTo('home')">← Back</button>
+                <h1>Zane Flynt</h1>
+                <p class="role">The Operative</p>
+
+                <div class="description">
+                    <span class="miniTitle">Action Skill</span>
+                    <p>Digi-Clone (a holographic twin that shoots and swaps places with you), SNTNL (an attack drone buddy), and the Barrier (a deployable shield). Uniquely, Zane can equip TWO of these at once — he just gives up grenades to do it.</p>
+                </div>
+
+                <div class="description">
+                    <span class="miniTitle">Backstory</span>
+                    <p>Born on Pandora into the infamous Flynt family — brother of Captain Flynt and Baron Flynt. Spent decades as a corporate assassin before "retiring" into Vault hunting. Talks constantly, mostly to himself, sometimes to his clone.</p>
+                </div>
+
+                <div class="description">
+                    <span class="miniTitle">Playstyle</span>
+                    <p>Trickster. Confuse enemies with the clone, zip around the battlefield, and let your gadgets do half the work while you do all the talking.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- ================= Fl4k ================= -->
+         <section class="page" id="fl4k">
+            <div class="details">
+                <button class="goBackBtn" onclick="goTo('home')">← Back</button>
+                <h1>Fl4k</h1>
+                <p class="role">The Beastmaster</p>
+
+                <div class="description">
+                    <span class="miniTitle">Action Skill</span>
+                    <p>Fl4k can summon and command pets to fight alongside him, each with unique abilities. He can also enter a powerful "Fade Away" mode, becoming invisible and dealing massive damage.</p>
+                </div>
+
+                <div class="description">
+                    <span class="miniTitle">Backstory</span>
+                    <p>Fl4k is a mysterious creature hunter from the wilds of Pandora. Raised by a pack of robotic creatures, he has a deep bond with his pets and a unique perspective on the world.</p>
+                </div>
+
+                <div class="description">
+                    <span class="miniTitle">Playstyle</span>
+                    <p>Pet Master. Command your pets to attack, distract, and support you in battle while you stay at a safe distance, using your unique abilities to control the flow of combat.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- ================= Ellie ================= -->
+         <section class="page" id="ellie">
+            <div class="details">
+                <button class="goBackBtn" onclick="goTo('home')">← Back</button>
+                <h1>Ellie</h1>
+                <p class="role">NPC - Mechanic</p>
+
+                <div class="description"> 
+                    <span class="miniTitle">Role in the Game</span>
+                    <p>Ellie is the chief mechanic of Sanctuary III, providing players with vehicle upgrades, repairs, and customizations. She also offers side quests and valuable information about the world of Pandora.</p>
+                </div>
+
+                <div class="description">
+                    <span class="miniTitle">Backstory</span>
+                    <p>Ellie has been a skilled mechanic for years, known for her expertise in vehicles and machinery. She has a big heart and a passion for helping others, often putting herself at risk to assist Vault Hunters.</p>
+                </div>
+
+                <div class="description">
+                    <span class="miniTitle">Personality</span>
+                    <p>Ellie is tough, resourceful, and fiercely independent. She has a no-nonsense attitude but also shows compassion and loyalty to those she trusts.</p>
+                </div>
+            </div>
+        </section>
+
+
+        <!-- Put the rest of the cards under this comment -->
+        <!-- ================= Moze ================= -->
+        <section class="page" id="moze">
+            <div class="details">
+                <button class="goBackBtn" onclick="goTo('home')">← Back</button>
+                <h1>Moze</h1>
+                <p class="role">The Gunner</p>
+
+                <div class="description"> 
+                    <span class="miniTitle">Role in the Game</span>
+                    <p>Moze is a versatile combatant, capable of dealing massive damage with her arsenal of weapons and her trusty mech, Iron Bear. She excels in both offensive and defensive roles, making her a valuable asset in any team.</p>
+                </div>
+
+                <div class="description">
+                    <span class="miniTitle">Backstory</span>
+                    <p>Moze has a military background and a strong sense of duty. She joined the fight against the Crimson Raiders to protect her home and loved ones, using her skills and Iron Bear to turn the tide of battle.</p>
+                </div>
+
+                <div class="description">
+                    <span class="miniTitle">Personality</span>
+                    <p>Moze is determined, courageous, and fiercely loyal to her friends and allies. She has a strong sense of justice and is always ready to face any challenge head-on.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- ================= Amara ================= -->
+        <section class="page" id="amara">
+            <div class="details">
+                <button class="goBackBtn" onclick="goTo('home')">← Back</button>
+                <h1>Amara</h1>
+                <p class="role">The Siren</p>
+                <div class="description"> 
+                    <span class="miniTitle">Role in the Game</span>
+                    <p>Amara is a powerful Siren, capable of harnessing mystical abilities to control the battlefield. She excels in both offensive and defensive roles, making her a versatile and formidable character.</p>
+                </div>
+
+                <div class="description">
+                    <span class="miniTitle">Backstory</span>
+                    <p>Amara has trained extensively to master her Siren abilities, seeking to protect those who cannot protect themselves. Her journey is one of self-discovery and empowerment, as she learns to harness her powers for the greater good.</p>
+                </div>
+
+                <div class="description">
+                    <span class="miniTitle">Personality</span>
+                    <p>Amara is confident, determined, and compassionate. She is driven by a strong sense of justice and a desire to help those in need, always striving to make a positive impact on the world around her.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- ================= Cl4pTrap ================= -->
+        <section class="page" id="cl4ptrap">
+            <div class="details">
+                <button class="goBackBtn" onclick="goTo('home')">← Back</button>
+                <h1>Cl4pTrap</h1>
+                <p class="role">NPC - Robot</p>
+                <div class="description"> 
+                    <span class="miniTitle">Role in the Game</span>
+                    <p>Cl4pTrap is a quirky and unpredictable robot, known for his humorous antics and explosive combat abilities. He provides comic relief while also being a formidable ally in battle.</p>
+                </div>
+
+                <div class="description">
+                    <span class="miniTitle">Backstory</span>
+                    <p>Cl4pTrap was created as a general-purpose robot, but his unique personality and penchant for chaos set him apart. He has a mysterious past and a knack for getting into trouble, often finding himself in the middle of unexpected adventures.</p>
+                </div>
+
+                <div class="description">
+                    <span class="miniTitle">Personality</span>
+                    <p>Cl4pTrap is eccentric, unpredictable, and full of energy. He has a mischievous sense of humor and enjoys causing chaos, but he is also loyal and will go to great lengths to help his friends.</p>
+                </div>
+            </div>
+        </section>
+
+    </div>
+</body>
+</html>
