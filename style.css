@@ -32,7 +32,7 @@ body {
     min-height: 300px;
     border-radius: 22px;
     overflow: hidden;       /* Ensures that the image and shade don't spill outside the rounded corners */
-    margin: 0 auto 28px;    /* auto centers the banner horizontally and add space below it */
+    margin: 0 auto;          /* auto centers the banner horizontally; row/col spacing handles vertical gaps */
     max-width: 990px;       /* Won't go wider than this */
     background: #16120e;
 }
