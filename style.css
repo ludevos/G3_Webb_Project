@@ -50,8 +50,8 @@ body {
     position: absolute;        /* Makes the shade sit on top of the img */
     inset: 0;
     background: linear-gradient(90deg,
-    rgba(13,11,9,0) 25%,
-    rgba(13,11,9,0.92)62%);
+    rgba(13,11,9,0) 25%,                /* Transparent on the left side */
+    rgba(13,11,9,0.92)62%);             /* Darker on the right side */
 }
 
 /* Text container that sits on top of the banner img and shade */
