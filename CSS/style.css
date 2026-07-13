@@ -1,0 +1,262 @@
+* {box-sizing: border-box;} /* Makes sure padding and border are included in the width and height of elements */
+
+body {
+    margin:0;
+    background-color: #2e263d;
+    font-family: 'Times New Roman', Times, serif;
+    color: aliceblue;
+    overflow: hidden; /* Prevents vertical scrolling and lets the filmstrip handle horizontal scrolling */ 
+}
+
+/* The filmstrip container that holds all the pages. Each page is a child of this container. */
+.filmstrip {
+    display: flex;              /* Arrange the child pages in a row */ 
+    overflow-x: auto;           /* hide the scrollbar */
+    scroll-behavior: smooth;    /* Make the scrolling smooth */
+    height: 100vh;              /* Full viewport height */
+}
+
+/* Every page = one screen wide. */
+.page {
+    min-width: 100vw;
+    height: 100vh;
+    overflow-x: auto;                           /* Allow horizontal scrolling within the page */
+    overflow-y: auto;                           /* So we can scroll vertically */
+    padding: 40px clamp(16px, 5vw, 80px);       /* clamp() is a function that makes sure the padding is responsive */
+}
+
+/* The banner of the cards */
+.banner {
+    position: relative;
+    display: flex;          /* Flexbox layout to position the text and image responsively */
+    align-items: center;
+    min-height: 300px;
+    border-radius: 22px;
+    overflow: hidden;       /* Ensures that the image and shade don't spill outside the rounded corners */
+    margin: 0 auto;          /* auto centers the banner horizontally; row/col spacing handles vertical gaps */
+    max-width: 990px;       /* Won't go wider than this */
+    background: #16120e;
+}
+
+.banner-img {
+    position: absolute; 
+    inset: 0;                /* Quick way to set top, right, bottom, left */
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* A gradient overlay to darken the image and make text more readable */
+.shade {
+    position: absolute;        /* Makes the shade sit on top of the img */
+    inset: 0;
+    background: linear-gradient(90deg,
+    rgba(13,11,9,0) 25%,                /* Transparent on the left side */
+    rgba(13,11,9,0.92)62%);             /* Darker on the right side */
+}
+
+/* Text container that sits on top of the banner img and shade */
+.bannerText {
+    position: relative;
+    z-index: 2;                     /* z-index = stacking order. Bigger number = higher stacking order. Make sure the text is above the img and shade */
+    margin-left: auto;
+    width: min(52%, 420px);
+    padding: 40px 40px 40px 0;
+}
+
+/* This is the text above the banner img that says what type of character it is */
+.playerOrNPC {
+    font-size: 13px;
+    font-weight: 300;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    margin: 0 0 8px;
+}
+
+/* This is the text that is the name of the character <h2> */
+.bannerText h2 {
+    font-family: 'Times New Roman', Times, serif;
+    font-size: clamp(40px, 6vw, 62px);
+    line-height: 0.95;
+    margin: 0 0 12px;
+    color: #f7b731;
+}
+
+.bannerText p {
+    margin: 0 0 20px;
+    font-size: 15px;
+    line-height: 1.5;
+    color: #d8d2c2;
+}
+
+.moreInfo {
+    display: inline-block;
+    background: #f7b731;
+    color: black;
+    font-family: 'Times New Roman', Times, serif;
+    font-weight: 700;                               /* Makes the text bold */
+    font-size: 15px;
+    padding: 12px 26px;
+    border: none;
+    border-radius: 999px;                           /* Makes the pill shape */
+    cursor: pointer;
+    transition: transform 0.15s, box-shadow 0.15s;  /* Smooth transition for hover effects */
+}
+
+.moreInfo:hover {
+    transform: translateY(-2px);                        /* Moves the button up slightly on hover */
+    box-shadow: 0 6px 20px rgba(247, 183, 49, 0.35);  /* Adds a shadow to give a "lifted" effect on hover */
+}
+
+/* This translate to: find anything with class playerOrNPC that lives inside class zane and recolour it. 
+   This is parent -> child */
+.zane .playerOrNPC, .zane h2          {color: #37c2e8;}
+.zane .moreInfo                       {background: #37c2e8;}
+.fl4k .playerOrNPC, .fl4k h2          {color: #ff5e3a;}
+.fl4k .moreInfo                       {background: #ff5e3a;}
+.ellie .playerOrNPC, .ellie h2        {color: #ff4fa3;}
+.ellie .moreInfo                      {background: #ff4fa3;}
+.moze .playerOrNPC, .moze h2          {color: #f7b731;}
+.moze .moreInfo                       {background: #f7b731;}
+.amara .playerOrNPC, .amara h2        {color: #37c2e8;}
+.amara .moreInfo                      {background: #37c2e8;}
+.cl4ptrap .playerOrNPC, .cl4ptrap h2  {color: #d48026;}
+.cl4ptrap .moreInfo                   {background: #d48026;}
+
+/* ================================================
+          Character Detail pages - The Frame
+   ================================================*/
+.details {
+    max-width: 980px;
+    margin: 0 auto;
+}
+
+.goBackBtn {
+    background: none;
+    border: 2px solid #f0ead6;
+    color: #f0ead6;
+    font-weight: 700;
+    padding: 10px 22px;
+    border-radius: 999px;
+    cursor: pointer; 
+    margin-bottom: 30px;
+    transition: background 0.15s, color 0.15s; /* Smooth transition for hover effects */
+}
+
+.goBackBtn:hover {
+    background: #f7b731;
+    color: #0d0b09;
+}
+
+.details h1 {
+    font-family: 'Times New Roman', Times, serif;
+    font-size: clamp(60px, 10vw, 110px);             /* clamp makes it responsive. vw is viewport */
+    line-height: 0.9;
+    margin: 0 0 6px;
+}
+
+.details .role {
+    font-size: 14px;
+    font-weight: 700;
+    letter-spacing: 4px;
+    text-transform: uppercase;
+    color: #d8d2c2;
+    margin-bottom: 36px;
+}
+
+/* For the Action/Backstory/Playstyle - Also make the pill shape */
+.miniTitle {
+    display: inline-block;
+    background-color: #393854;
+    font-size: 11px;
+    text-transform: uppercase;
+    padding: 5px 12px;
+    border-radius: 999px;
+    margin-bottom: 10px;
+}
+
+.description {
+    margin: 0;
+    font-size: 16px;
+    line-height: 1.65;
+    color: #d8d2c2;
+}
+
+#zane h1, #zane .miniTitle         {color: #37c2e8;}
+#zane h1                           {color: #37c2e8;}
+#zane .description                 {color: #37c2e8;}
+#fl4k h1                           {color: #ff5e3a;}
+#fl4k .description                 {color: #ff5e3a;}
+#ellie h1                          {color: #ff4fa3;}
+#ellie .description                {color: #ff4fa3;}
+#moze h1, #moze .miniTitle         {color: #f7b731;}
+#moze .description                 {color: #f7b731;}
+#amara h1, #amara .miniTitle       {color: #37c2e8;}
+#amara .description                {color: #37c2e8;}
+#cl4ptrap h1, #cl4ptrap .miniTitle {color: #d48026;}
+#cl4ptrap .description             {color: #d48026;}
+
+.title{
+    text-align: center;
+    font-family: 'Times New Roman', Times, serif;
+    font-size: clamp(34px, 5vw, 52px);
+    letter-spacing: 3px;
+    color: #f7b731;
+    margin: 0 0 34px;
+}
+
+.submitBtn {
+    background: #f7b731;
+    color: black;
+    font-weight: 700;
+    font-size: 15px;
+    padding: 12px 26px;
+    border: none;
+    border-radius: 999px;
+    cursor: pointer;
+    margin-top: 16px;
+}
+
+.submitBtn:hover {
+    background: #f0ead6;
+    color: #0d0b09;
+}
+
+.pollLink {
+    text-decoration: none;
+    display: inline-block;
+}
+
+/* For smaller screens adjust the layout of the banner and text */
+@media (max-width: 640px) {
+    .banner {min-height: 320px; align-items: flex-end;}
+    .bannerText {width: 100%; padding: 24px;}
+    .shade {background: linear-gradient(180deg, 
+    rgba(13,11,9,0) 20%, rgba(13,11,9,0.94)65%);}
+    .art{align-items: flex-start; padding: 20px 0 0 20px; font-size: 100px;}
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .filmstrip {scroll-behavior: auto;}
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
