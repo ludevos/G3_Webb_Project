@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form</title>
+    <link rel="stylesheet" href="form.css">
+    <script src="formJS.js"></script>
+</head>
+<body>
+    <a href="index.html" class="submitBtn pollLink">Back to Home</a>
+    <div class="poll">
+        <h2>Cast a vote, Vault Hunter</h2>
+        <p class="pollQ">Write your name and email:</p>
+
+        <input type="text" class="inputField" id="name" placeholder="Write your name">
+        <input type="email" class="inputField" id="email" placeholder="Write your email">
+
+        <p class="pollQ">Who's your favorite Vault Hunter?</p>
+
+
+        <!-- Vault Hunter pill button choice -->
+        <span class="choice">
+            <input type="radio" name="vH" id="vZane" value="Zane">
+            <label for="vZane">Zane</label>
+        </span>
+        <span class="choice">
+            <input type="radio" name="vH" id="vFl4k" value="Fl4k">
+            <label for="vFl4k">Fl4k</label>
+        </span>
+        <span class="choice">
+            <input type="radio" name="vH" id="vAmara" value="Amara">
+            <label for="vAmara">Amara</label>
+        </span>
+        <span class="choice">
+            <input type="radio" name="vH" id="vMoze" value="Moze">
+            <label for="vMoze">Moze</label>
+        </span>
+    
+        <p class="pollQ">Who's your favorite NPC?</p>
+
+        <!-- NPC pill button choice -->
+        <span class="choice">
+            <input type="radio" name="npc" id="vEllie" value="Ellie">
+            <label for="vEllie">Ellie</label>
+        </span>
+        <span class="choice">
+            <input type="radio" name="npc" id="vCl4p" value="Cl4ptrap">
+            <label for="vCl4p">Cl4ptrap</label>
+        </span>
+        <span class="choice">
+            <input type="radio" name="npc" id="vLilith" value="Lilith">
+            <label for="vLilith">Lilith</label>
+        </span>
+        <span class="choice">
+            <input type="radio" name="npc" id="vMoxxi" value="Moxxi">
+            <label for="vMoxxi">Moxxi</label>
+        </span>
+        <span class="choice">
+            <input type="radio" name="npc" id="vMarcus" value="Marcus">
+            <label for="vMarcus">Marcus</label>
+        </span>
+        <span class="choice">
+            <input type="radio" name="npc" id="vZer0" value="Zer0">
+            <label for="vZer0">Zer0</label>
+        </span>
+        <span class="choice">
+            <input type="radio" name="npc" id="vTannis" value="Tannis">
+            <label for="vTannis">Tannis</label>
+        </span>
+        <span class="choice">
+            <input type="radio" name="npc" id="vAva" value="Ava">
+            <label for="vAva">Ava</label>
+        </span>
+        <span class="choice">
+            <input type="radio" name="npc" id="vRhys" value="Rhys">
+            <label for="vRhys">Rhys</label>
+        </span>
+        <span class="choice">
+            <input type="radio" name="npc" id="vTiny" value="Tiny Tina">
+            <label for="vTiny">Tiny Tina</label>
+        </span>
+        <span class="choice">
+            <input type="radio" name="npc" id="vBrick" value="Brick">
+            <label for="vBrick">Brick</label>
+        </span>
+        <span class="choice">
+            <input type="radio" name="npc" id="vMordecai" value="Mordecai">
+            <label for="vMordecai">Mordecai</label>
+        </span>
+        <span class="choice">
+            <input type="radio" name="npc" id="vHammerlock" value="Hammerlock">
+            <label for="vHammerlock">Hammerlock</label>
+        </span>
+        <span class="choice">
+            <input type="radio" name="npc" id="vTyphon" value="Typhon">
+            <label for="vTyphon">Typhon</label>
+        </span>
+        <span class="choice">
+            <input type="radio" name="npc" id="vVaughn" value="Vaughn">
+            <label for="vVaughn">Vaughn</label>
+        </span>
+
+        <br>
+            <button onclick="showResult()" class="submitBtn">Submit</button>
+        <br>
+
+        <p id="resultOfPoll" class="resultOfPoll"></p>
+    </div>
+</body>
+</html>
