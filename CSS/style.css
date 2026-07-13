@@ -1,5 +1,12 @@
 * {box-sizing: border-box;} /* Makes sure padding and border are included in the width and height of elements */
 
+#home {
+    background: url('../img/BL3_BG.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
 body {
     margin:0;
     background-color: #2e263d;
