@@ -1,4 +1,4 @@
-* {box-sizing: border-box;} /* Makes sure padding and border are included in the width and height of elements */
+* {box-sizing: border-box;} /* Make sure all elements include padding and border in their width and height */
 
 #home {
     background: url('../img/BL3_BG.jpg');
@@ -21,8 +21,8 @@
 
 #fl4k {
     background: 
-    linear-gradient(90deg,
-    rgba(13,11,9,0.95) 40%,
+    linear-gradient(90deg,          /* linear-gradient makes sure a smooth transition from dark to light */
+    rgba(13,11,9,0.95) 40%,       /* rgba(13,11,9,0.95 = Is the gradient and the .95 is the opacity and 40% is where it should stop */
     rgba(13,11,9,0.35) 100%),
     url('../img/fl4k_bg.jpg');
     background-size: cover;
