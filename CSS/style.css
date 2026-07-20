@@ -272,12 +272,12 @@ body {
 #cl4ptrap h1, #cl4ptrap .miniTitle {color: #d48026;}
 #cl4ptrap .description             {color: #d48026;}
 
-.title{
+.title {
     text-align: center;
     font-family: 'Times New Roman', Times, serif;
     font-size: clamp(34px, 5vw, 52px);
     letter-spacing: 3px;
-    color: #f7b731;
+    color: #c29a43;
     margin: 0 0 34px;
 }
 
